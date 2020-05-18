@@ -2,13 +2,13 @@
 <sdf version="1.5">
   <model name="tt_table">
     <static>true</static>
-    <link name="link">
+    <link name="leg1">
       <collision name="collision">
-        <pose>0 0 0 0 0 0</pose>
+        <pose>1 0.5 0.375 0 0 0</pose>
         <geometry>
-          <mesh>
-            <uri>model://tt_table/meshes/ttt.stl</uri>
-          </mesh>
+            <box>
+                <size> 0.1 0.1 0.75  </size>
+            </box>
         </geometry>
         <surface>
           <friction>
@@ -28,12 +28,542 @@
         </surface>
       </collision>
       <visual name="visual">
-        <pose>0 0 0 0 0 0</pose>
+        <pose>1 0.5 0.375 0 0 0</pose>
         <geometry>
-          <mesh>
-            <uri>model://tt_table/meshes/ttt.stl</uri>
-          </mesh>
+            <box>
+                <size> 0.1 0.1 0.75  </size>
+            </box>
         </geometry>
+        <material>
+            <ambient> 0 0 0 1 </ambient>
+            <specular> 0.1 0.1 0.1 1 </specular>
+            <diffuse> 0 0 0 1 </diffuse>
+            <emissive> 0.1 0.1 0.1 1 </emissive>
+        </material>
+      </visual>
+    </link>
+    <link name="leg2">
+      <collision name="collision">
+        <pose>-1 0.5 0.375 0 0 0</pose>
+        <geometry>
+            <box>
+                <size> 0.1 0.1 0.75  </size>
+            </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <kp>10000000.0</kp>
+              <kd>1.0</kd>
+              <min_depth>0.001</min_depth>
+              <max_vel>0.1</max_vel>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <pose>-1 0.5 0.375 0 0 0</pose>
+        <geometry>
+            <box>
+                <size> 0.1 0.1 0.75  </size>
+            </box>
+        </geometry>
+        <material>
+            <ambient> 0 0 0 1 </ambient>
+            <specular> 0.1 0.1 0.1 1 </specular>
+            <diffuse> 0 0 0 1 </diffuse>
+            <emissive> 0.1 0.1 0.1 1 </emissive>
+        </material>
+      </visual>
+    </link>
+    <link name="leg3">
+      <collision name="collision">
+        <pose>1 -0.5 0.375 0 0 0</pose>
+        <geometry>
+            <box>
+                <size> 0.1 0.1 0.75  </size>
+            </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <kp>10000000.0</kp>
+              <kd>1.0</kd>
+              <min_depth>0.001</min_depth>
+              <max_vel>0.1</max_vel>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <pose>1 -0.5 0.375 0 0 0</pose>
+        <geometry>
+            <box>
+                <size> 0.1 0.1 0.75  </size>
+            </box>
+        </geometry>
+        <material>
+            <ambient> 0 0 0 1 </ambient>
+            <specular> 0.1 0.1 0.1 1 </specular>
+            <diffuse> 0 0 0 1 </diffuse>
+            <emissive> 0.1 0.1 0.1 1 </emissive>
+        </material>
+      </visual>
+    </link>
+    <link name="leg4">
+      <collision name="collision">
+        <pose>-1 -0.5 0.375 0 0 0</pose>
+        <geometry>
+            <box>
+                <size> 0.1 0.1 0.75  </size>
+            </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <kp>10000000.0</kp>
+              <kd>1.0</kd>
+              <min_depth>0.001</min_depth>
+              <max_vel>0.1</max_vel>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <pose>-1 -0.5 0.375 0 0 0</pose>
+        <geometry>
+            <box>
+                <size> 0.1 0.1 0.75  </size>
+            </box>
+        </geometry>
+        <material>
+            <ambient> 0 0 0 1 </ambient>
+            <specular> 0.1 0.1 0.1 1 </specular>
+            <diffuse> 0 0 0 1 </diffuse>
+            <emissive> 0.1 0.1 0.1 1 </emissive>
+        </material>
+      </visual>
+    </link>
+    <link name="table_surface">
+      <collision name="collision">
+        <pose>0 0 0.7605 0 0 0</pose>
+        <geometry>
+            <plane>
+                <size> 2.74 1.525 0  </size>
+            </plane>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <kp>10000000.0</kp>
+              <kd>1.0</kd>
+              <min_depth>0.001</min_depth>
+              <max_vel>0.1</max_vel>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <pose>0 0 0.7605 0 0 0</pose>
+        <geometry>
+            <plane>
+                <size> 2.74 1.525 0  </size>
+            </plane>
+        </geometry>
+        <material>
+            <ambient> 0 0 0.2 1 </ambient>
+            <specular> 0.1 0.1 0.1 1 </specular>
+            <diffuse> 0 0 0.1 1 </diffuse>
+            <emissive> 0.1 0.1 0.1 1 </emissive>
+        </material>
+      </visual>
+    </link>
+    <link name="net">
+      <collision name="collision">
+        <pose>0 0 0.83675 0 0 0</pose>
+        <geometry>
+            <box>
+                <size> 0.001 1.875 0.1525  </size>
+            </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <kp>10000000.0</kp>
+              <kd>1.0</kd>
+              <min_depth>0.001</min_depth>
+              <max_vel>0.1</max_vel>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <pose>0 0 0.83675 0 0 0</pose>
+        <geometry>
+            <box>
+                <size> 0.001 1.875 0.1525  </size>
+            </box>
+        </geometry>
+        <material>
+            <ambient> 1 1 1 0.5 </ambient>
+            <specular> 0.1 0.1 0.1 0.5 </specular>
+            <diffuse> 1 1 1 0.5 </diffuse>
+            <emissive> 0.1 0.1 0.1 0.5 </emissive>
+        </material>
+      </visual>
+    </link>
+    <link name="net_holder1">
+      <collision name="collision">
+        <pose>0 -0.9475 0.83675 0 0 0</pose>
+        <geometry>
+            <cylinder>
+                <radius> 0.01 </radius>
+                <length> 0.1525  </length>
+            </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <kp>10000000.0</kp>
+              <kd>1.0</kd>
+              <min_depth>0.001</min_depth>
+              <max_vel>0.1</max_vel>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <pose>0 -0.9475 0.83675 0 0 0</pose>
+        <geometry>
+            <cylinder>
+                <radius> 0.01 </radius>
+                <length> 0.1525  </length>
+            </cylinder>
+        </geometry>
+        <material>
+            <ambient> 0 0 0 1 </ambient>
+            <specular> 0.1 0.1 0.1 1 </specular>
+            <diffuse> 0 0 0 1 </diffuse>
+            <emissive> 0.1 0.1 0.1 1 </emissive>
+        </material>
+      </visual>
+    </link>
+    <link name="net_holder2">
+      <collision name="collision">
+        <pose>0 0.9475 0.83675 0 0 0</pose>
+        <geometry>
+            <cylinder>
+                <radius> 0.01 </radius>
+                <length> 0.1525  </length>
+            </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <kp>10000000.0</kp>
+              <kd>1.0</kd>
+              <min_depth>0.001</min_depth>
+              <max_vel>0.1</max_vel>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <pose>0 0.9475 0.83675 0 0 0</pose>
+        <geometry>
+            <cylinder>
+                <radius> 0.01 </radius>
+                <length> 0.1525  </length>
+            </cylinder>
+        </geometry>
+        <material>
+            <ambient> 0 0 0 1 </ambient>
+            <specular> 0.1 0.1 0.1 1 </specular>
+            <diffuse> 0 0 0 1 </diffuse>
+            <emissive> 0.1 0.1 0.1 1 </emissive>
+        </material>
+      </visual>
+    </link>
+    <link name="centerline">
+      <collision name="collision">
+        <pose>0 0 0.761 0 0 0</pose>
+        <geometry>
+            <plane>
+                <size> 2.74 0.03 0  </size>
+            </plane>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <kp>10000000.0</kp>
+              <kd>1.0</kd>
+              <min_depth>0.001</min_depth>
+              <max_vel>0.1</max_vel>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <pose>0 0 0.761 0 0 0</pose>
+        <geometry>
+            <plane>
+                <size> 2.74 0.03 0  </size>
+            </plane>
+        </geometry>
+        <material>
+            <ambient> 1 1 1 1 </ambient>
+            <specular> 0.1 0.1 0.1 1 </specular>
+            <diffuse> 1 1 1 1 </diffuse>
+            <emissive> 0.1 0.1 0.1 1 </emissive>
+        </material>
+      </visual>
+    </link>
+    <link name="sideline1">
+      <collision name="collision">
+        <pose>0 0.7525 0.761 0 0 0</pose>
+        <geometry>
+            <plane>
+                <size> 2.74 0.02 0  </size>
+            </plane>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <kp>10000000.0</kp>
+              <kd>1.0</kd>
+              <min_depth>0.001</min_depth>
+              <max_vel>0.1</max_vel>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <pose>0 0.7525 0.761 0 0 0</pose>
+        <geometry>
+            <plane>
+                <size> 2.74 0.02 0  </size>
+            </plane>
+        </geometry>
+        <material>
+            <ambient> 1 1 1 1 </ambient>
+            <specular> 0.1 0.1 0.1 1 </specular>
+            <diffuse> 1 1 1 1 </diffuse>
+            <emissive> 0.1 0.1 0.1 1 </emissive>
+        </material>
+      </visual>
+    </link>
+    <link name="sideline2">
+      <collision name="collision">
+        <pose>0 -0.7525 0.761 0 0 0</pose>
+        <geometry>
+            <plane>
+                <size> 2.74 0.02 0  </size>
+            </plane>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <kp>10000000.0</kp>
+              <kd>1.0</kd>
+              <min_depth>0.001</min_depth>
+              <max_vel>0.1</max_vel>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <pose>0 -0.7525 0.761 0 0 0</pose>
+        <geometry>
+            <plane>
+                <size> 2.74 0.02 0  </size>
+            </plane>
+        </geometry>
+        <material>
+            <ambient> 1 1 1 1 </ambient>
+            <specular> 0.1 0.1 0.1 1 </specular>
+            <diffuse> 1 1 1 1 </diffuse>
+            <emissive> 0.1 0.1 0.1 1 </emissive>
+        </material>
+      </visual>
+    </link>
+    <link name="sideline3">
+      <collision name="collision">
+        <pose>1.36 0 0.761 0 0 1.57079632679</pose>
+        <geometry>
+            <plane>
+                <size> 1.525 0.02 0  </size>
+            </plane>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <kp>10000000.0</kp>
+              <kd>1.0</kd>
+              <min_depth>0.001</min_depth>
+              <max_vel>0.1</max_vel>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <pose>1.36 0 0.761 0 0 1.57079632679</pose>
+        <geometry>
+            <plane>
+                <size> 1.525 0.02 0  </size>
+            </plane>
+        </geometry>
+        <material>
+            <ambient> 1 1 1 1 </ambient>
+            <specular> 0.1 0.1 0.1 1 </specular>
+            <diffuse> 1 1 1 1 </diffuse>
+            <emissive> 0.1 0.1 0.1 1 </emissive>
+        </material>
+      </visual>
+    </link>
+    <link name="sideline4">
+      <collision name="collision">
+        <pose>-1.36 0 0.761 0 0 1.57079632679</pose>
+        <geometry>
+            <plane>
+                <size> 1.525 0.02 0  </size>
+            </plane>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <kp>10000000.0</kp>
+              <kd>1.0</kd>
+              <min_depth>0.001</min_depth>
+              <max_vel>0.1</max_vel>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <pose>-1.36 0 0.761 0 0 1.57079632679</pose>
+        <geometry>
+            <plane>
+                <size> 1.525 0.02 0  </size>
+            </plane>
+        </geometry>
+        <material>
+            <ambient> 1 1 1 1 </ambient>
+            <specular> 0.1 0.1 0.1 1 </specular>
+            <diffuse> 1 1 1 1 </diffuse>
+            <emissive> 0.1 0.1 0.1 1 </emissive>
+        </material>
+      </visual>
+    </link>
+    <link name="table">
+      <collision name="collision">
+        <pose>0 0 0.735 0 0 0</pose>
+        <geometry>
+            <box>
+                <size> 2.74 1.525 0.05  </size>
+            </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <kp>10000000.0</kp>
+              <kd>1.0</kd>
+              <min_depth>0.001</min_depth>
+              <max_vel>0.1</max_vel>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <pose>0 0 0.735 0 0 0</pose>
+        <geometry>
+            <box>
+                <size> 2.74 1.525 0.05  </size>
+            </box>
+        </geometry>
+        <material>
+            <ambient> 0 0 0 1 </ambient>
+            <specular> 0.1 0.1 0.1 1 </specular>
+            <diffuse> 0.1 0.1 0.1 1 </diffuse>
+            <emissive> 0.1 0.1 0.1 1 </emissive>
+        </material>
       </visual>
     </link>
   </model>

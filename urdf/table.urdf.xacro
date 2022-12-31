@@ -1,0 +1,274 @@
+<?xml version="1.0"?>
+<robot name="table" xmlns:xacro="http://ros.org/wiki/xacro">
+    <material name="table_colour">
+        <color rgba="0.1 0.1 0.4 1"/>
+    </material>
+
+    <gazebo reference="tt_table_link">
+        <material>Gazebo/Blue</material>
+    </gazebo>
+
+    <link name="tt_table_center_link"/>
+
+    <link name="tt_table_link">
+        <inertial>
+            <mass value="100"/>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <inertia  ixx="19.38770833333333" ixy="0" ixz="0" iyy="62.57083333333333" iyz="0" izz="81.94354166666666" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="2.74 1.525 0.03" />
+            </geometry>
+            <material name="table_colour"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="2.74 1.525 0.03" />
+            </geometry>
+        </collision>
+    </link>
+
+    <joint name="tt_table_joint" type="fixed">
+        <parent link="tt_table_center_link"/>
+        <child link="tt_table_link"/>
+        <origin xyz="0 0 0.745" rpy="0 0 0" />
+    </joint>
+
+    <link name="tt_table_boundary_1_link">
+        <inertial>
+            <mass value="0"/>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <inertia  ixx="6.997767154121414" ixy="0" ixz="0" iyy="17.876069102859596" iyz="0" izz="18.49883625698101" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="2.74 0.02 0.001" />
+            </geometry>
+        </visual>
+    </link>
+
+    <joint name="tt_table_boundary_1_joint" type="fixed">
+        <parent link="tt_table_link"/>
+        <child link="tt_table_boundary_1_link"/>
+        <origin xyz="0 0.7525 0.015" rpy="0 0 0" />
+    </joint>
+
+    <link name="tt_table_boundary_2_link">
+        <inertial>
+            <mass value="0"/>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <inertia  ixx="6.997767154121414" ixy="0" ixz="0" iyy="17.876069102859596" iyz="0" izz="18.49883625698101" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="2.74 0.02 0.001" />
+            </geometry>
+        </visual>
+    </link>
+
+    <joint name="tt_table_boundary_2_joint" type="fixed">
+        <parent link="tt_table_link"/>
+        <child link="tt_table_boundary_2_link"/>
+        <origin xyz="0 -0.7525 0.015" rpy="0 0 0" />
+    </joint>
+
+    <link name="tt_table_boundary_3_link">
+        <inertial>
+            <mass value="0"/>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <inertia  ixx="6.997767154121414" ixy="0" ixz="0" iyy="17.876069102859596" iyz="0" izz="18.49883625698101" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.02 1.525 0.001" />
+            </geometry>
+        </visual>
+    </link>
+
+    <joint name="tt_table_boundary_3_joint" type="fixed">
+        <parent link="tt_table_link"/>
+        <child link="tt_table_boundary_3_link"/>
+        <origin xyz="1.36 0 0.015" rpy="0 0 0" />
+    </joint>
+
+    <link name="tt_table_boundary_4_link">
+        <inertial>
+            <mass value="0"/>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <inertia  ixx="6.997767154121414" ixy="0" ixz="0" iyy="17.876069102859596" iyz="0" izz="18.49883625698101" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.02 1.525 0.001" />
+            </geometry>
+        </visual>
+    </link>
+
+    <joint name="tt_table_boundary_4_joint" type="fixed">
+        <parent link="tt_table_link"/>
+        <child link="tt_table_boundary_4_link"/>
+        <origin xyz="-1.36 0 0.015" rpy="0 0 0" />
+    </joint>
+
+    <link name="tt_table_boundary_5_link">
+        <inertial>
+            <mass value="0"/>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <inertia  ixx="6.997767154121414" ixy="0" ixz="0" iyy="17.876069102859596" iyz="0" izz="18.49883625698101" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="2.74 0.003 0.001" />
+            </geometry>
+        </visual>
+    </link>
+
+    <joint name="tt_table_boundary_5_joint" type="fixed">
+        <parent link="tt_table_link"/>
+        <child link="tt_table_boundary_5_link"/>
+        <origin xyz="0 0 0.015" rpy="0 0 0" />
+    </joint>
+
+    <link name="tt_table_net_link">
+        <inertial>
+            <mass value="0"/>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <inertia  ixx="6.997767154121414" ixy="0" ixz="0" iyy="17.876069102859596" iyz="0" izz="18.49883625698101" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.002 1.83 0.1525" />
+            </geometry>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.002 1.83 0.1525" />
+            </geometry>
+        </collision>
+    </link>
+
+    <joint name="tt_table_net_joint" type="fixed">
+        <parent link="tt_table_link"/>
+        <child link="tt_table_net_link"/>
+        <origin xyz="0 0 0.091" rpy="0 0 0" />
+    </joint>
+
+    <link name="tt_table_leg_1_link">
+        <inertial>
+            <mass value="9"/>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <inertia  ixx="0.40717499999999995" ixy="0" ixz="0" iyy="0.40717499999999995" iyz="0" izz="0.015000000000000003" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.1 0.1 0.73" />
+            </geometry>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.1 0.1 0.73" />
+            </geometry>
+        </collision>
+    </link>
+
+    <joint name="tt_table_leg_1_joint" type="fixed">
+        <parent link="tt_table_center_link"/>
+        <child link="tt_table_leg_1_link"/>
+        <origin xyz="1.05 0.45 0.365" rpy="0 0 0" />
+    </joint>
+
+    <link name="tt_table_leg_2_link">
+        <inertial>
+            <mass value="9"/>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <inertia  ixx="0.40717499999999995" ixy="0" ixz="0" iyy="0.40717499999999995" iyz="0" izz="0.015000000000000003" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.1 0.1 0.73" />
+            </geometry>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.1 0.1 0.73" />
+            </geometry>
+        </collision>
+    </link>
+
+    <joint name="tt_table_leg_2_joint" type="fixed">
+        <parent link="tt_table_center_link"/>
+        <child link="tt_table_leg_2_link"/>
+        <origin xyz="-1.05 0.45 0.365" rpy="0 0 0" />
+    </joint>
+
+    <link name="tt_table_leg_3_link">
+        <inertial>
+            <mass value="9"/>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <inertia  ixx="6.997767154121414" ixy="0" ixz="0" iyy="17.876069102859596" iyz="0" izz="18.49883625698101" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.1 0.1 0.73" />
+            </geometry>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.1 0.1 0.73" />
+            </geometry>
+        </collision>
+    </link>
+
+    <joint name="tt_table_leg_3_joint" type="fixed">
+        <parent link="tt_table_center_link"/>
+        <child link="tt_table_leg_3_link"/>
+        <origin xyz="-1.05 -0.45 0.365" rpy="0 0 0" />
+    </joint>
+
+    <link name="tt_table_leg_4_link">
+        <inertial>
+            <mass value="9"/>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <inertia  ixx="0.40717499999999995" ixy="0" ixz="0" iyy="0.40717499999999995" iyz="0" izz="0.015000000000000003" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.1 0.1 0.73" />
+            </geometry>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.1 0.1 0.73" />
+            </geometry>
+        </collision>
+    </link>
+
+    <joint name="tt_table_leg_4_joint" type="fixed">
+        <parent link="tt_table_center_link"/>
+        <child link="tt_table_leg_4_link"/>
+        <origin xyz="1.05 -0.45 0.365" rpy="0 0 0" />
+    </joint>
+
+    <gazebo>
+        <static>true</static>
+    </gazebo>
+
+</robot>

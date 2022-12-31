@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<robot name="ball" xmlns:xacro="http://ros.org/wiki/xacro">
+    <material name="ball_colour">
+        <color rgba="1 1 1 1"/>
+    </material>
+
+    <gazebo reference="tt_ball_link">
+        <material>Gazebo/White</material>
+    </gazebo>
+
+    <link name="tt_ball_center_link"/>
+
+    <link name="tt_ball_link">
+        <inertial>
+            <mass value="0.027"/>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <inertia  ixx="4.32e-06" ixy="0" ixz="0" iyy="4.32e-06" iyz="0" izz="4.32e-06" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <sphere radius="0.02"/>
+            </geometry>
+            <material name="ball_colour"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <sphere radius="0.02"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <joint name="tt_ball_joint" type="fixed">
+        <parent link="tt_ball_center_link"/>
+        <child link="tt_ball_link"/>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+    </joint>
+
+    <gazebo reference="tt_ball_link">
+        <mu1>0.8</mu1>
+        <mu2>0.8</mu2>
+        <kd>-49.001</kd>
+        <kp>50000</kp>
+        <minDepth>0</minDepth>
+        <maxVel>1666</maxVel>
+    </gazebo>
+
+    <gazebo>
+        <static>false</static>
+    </gazebo>
+
+</robot>
+
+

@@ -17,6 +17,7 @@
   <exec_depend>transmission_interface</exec_depend>
   <exec_depend>topic_tools</exec_depend>
   <exec_depend>tiago_robot</exec_depend>
+  <exec_depend>odom_to_tf_ros2</exec_depend>
 
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>

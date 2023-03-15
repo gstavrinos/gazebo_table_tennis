@@ -47,6 +47,19 @@
     </gazebo>
 
     <gazebo>
+        <plugin name="ball_position_plugin" filename="libgazebo_ros_p3d.so">
+            <ros>
+                <namespace>p3d</namespace>
+                <remapping>odom:=ball_odom</remapping>
+            </ros>
+            <frame_name>map</frame_name>
+            <body_name>tt_ball_center_link</body_name>
+            <update_rate>1.0</update_rate>
+            <gaussian_noise>0.0</gaussian_noise>
+        </plugin>
+    </gazebo>
+
+    <gazebo>
         <static>false</static>
     </gazebo>
 

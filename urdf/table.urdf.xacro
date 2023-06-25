@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <robot name="table" xmlns:xacro="http://ros.org/wiki/xacro">
+    <xacro:arg name="easy_collision" default="false"/>
     <material name="table_colour">
         <color rgba="0.1 0.1 0.4 1"/>
     </material>
@@ -24,10 +25,18 @@
             <material name="table_colour"/>
         </visual>
         <collision>
-            <origin xyz="0 0 0" rpy="0 0 0" />
-            <geometry>
-                <box size="2.74 1.525 0.03" />
-            </geometry>
+            <xacro:if value="$(arg easy_collision)">
+                <origin xyz="0 0 -0.37" rpy="0 0 0" />
+                <geometry>
+                    <box size="2.74 1.525 0.74" />
+                </geometry>
+            </xacro:if>
+            <xacro:unless value="$(arg easy_collision)">
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <box size="2.74 1.525 0.03" />
+                </geometry>
+            </xacro:unless>
         </collision>
     </link>
 
@@ -150,10 +159,18 @@
             </geometry>
         </visual>
         <collision>
-            <origin xyz="0 0 0" rpy="0 0 0" />
-            <geometry>
-                <box size="0.002 1.83 0.1525" />
-            </geometry>
+            <xacro:if value="$(arg easy_collision)">
+                <origin xyz="0 0 -0.37" rpy="0 0 0" />
+                <geometry>
+                    <box size="0.002 1.83 0.8925" />
+                </geometry>
+            </xacro:if>
+            <xacro:unless value="$(arg easy_collision)">
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <box size="0.002 1.83 0.1525" />
+                </geometry>
+            </xacro:unless>
         </collision>
     </link>
 

@@ -28,7 +28,7 @@
             <xacro:if value="$(arg easy_collision)">
                 <origin xyz="0 0 -0.37" rpy="0 0 0" />
                 <geometry>
-                    <box size="2.74 1.525 0.74" />
+                    <box size="2.74 1.525 0.77" />
                 </geometry>
             </xacro:if>
             <xacro:unless value="$(arg easy_collision)">

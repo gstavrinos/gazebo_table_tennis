@@ -54,7 +54,7 @@ def generate_launch_description():
         Node(
             package="joint_state_publisher",
             executable="joint_state_publisher",
-            name="table_joint_state_publisher",
+            name="ball_joint_state_publisher",
             remappings=[("/robot_description","/ball_description")],
             parameters=[{"use_sim_time": True,}],
             output="screen")

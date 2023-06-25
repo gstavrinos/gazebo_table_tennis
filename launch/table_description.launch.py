@@ -3,7 +3,7 @@ import os
 
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument
-from launch.substitutions import Command, FindExecutable, LaunchConfiguration, PathJoinSubstitution
+from launch.substitutions import Command, FindExecutable, LaunchConfiguration, PathJoinSubstitution, PythonExpression
 from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
 
@@ -18,6 +18,14 @@ def generate_launch_description():
             description="The package that includes the table description.",
         )
     )
+
+    easy_collision = LaunchConfiguration("easy_collision")
+
+    easy_collision_arg = DeclareLaunchArgument(
+        "easy_collision",
+        default_value="false"
+    )
+
 
     declared_arguments.append(
         DeclareLaunchArgument(
@@ -35,12 +43,16 @@ def generate_launch_description():
              PathJoinSubstitution([FindExecutable(name="xacro")]),
              " ",
              PathJoinSubstitution([FindPackageShare(description_package), "urdf", description_file]),
+             " ",
+             "easy_collision:=",
+             PythonExpression(["'", easy_collision,"'"])
              ]
     )
 
     return LaunchDescription(
         declared_arguments + 
         [
+        easy_collision_arg,
         Node(
             package="robot_state_publisher",
             executable="robot_state_publisher",
